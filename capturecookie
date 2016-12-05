@@ -1,0 +1,9 @@
+<script type="text/javascript">
+var url = window.location.href;
+var keyToFind = 'utm_campaign';
+if(url.indexOf(keyToFind + '=') > -1)
+{
+var valueFound = url.substr(url.indexOf(keyToFind + '=') + keyToFind.length + 1).split('&')[0];
+localStorage.setItem(keyToFind, valueFound);      
+}
+</script>

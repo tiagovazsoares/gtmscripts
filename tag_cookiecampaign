@@ -1,0 +1,19 @@
+<script>
+  (function(){
+	function setCookie(cname, cvalue, exdays) {
+    	var d = new Date();
+    	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    	var expires = "expires="+ d.toUTCString();
+    	document.cookie = cname + "=" + cvalue + "; "+expires+";domain=.tempovaliosovanish.com.br;path=/";
+	}
+    var query = document.location.search,
+        query = query.substr(1).split('&'),
+        ck = {};
+    
+    for (var x=0; x<query.length;x++){
+      	var par = query[x].split('=');
+    	ck[par[0]] = par[1];
+    }
+    setCookie('campanha', JSON.stringify(ck), 365);
+  })();
+</script>
